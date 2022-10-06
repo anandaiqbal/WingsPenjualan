@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WingsPenjualan</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="selamat_datang_di">Selamat Datang di</string>
+    <string name="buy">BUY</string>
+    <string name="checkout">CHECKOUT</string>
+</resources>
