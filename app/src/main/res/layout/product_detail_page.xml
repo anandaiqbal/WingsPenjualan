@@ -7,6 +7,10 @@
             name="data"
             type="id.iglo.common.entity.Product" />
 
+        <variable
+            name="constants"
+            type="id.iglo.common.base.Constants" />
+
 
         <import type="kotlin.text.StringsKt" />
     </data>
@@ -39,7 +43,6 @@
             android:id="@+id/price_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{String.format(`Price : Rp.%s`, data.price)}"
             android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@id/dimension_detail"
             app:layout_constraintTop_toBottomOf="@id/title_detail" />

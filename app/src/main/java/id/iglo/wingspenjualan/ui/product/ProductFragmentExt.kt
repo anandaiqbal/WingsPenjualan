@@ -25,9 +25,6 @@ fun ProductFragment.startActionMode(product: Product) {
 
 fun ProductFragment.checkoutButton(list: ArrayList<Product>) {
     vm.toCheckout(list)
-    val totalPrice = list.map {
-        it.price
-    }
 }
 
 fun ProductFragment.detailButton(product: Product) {

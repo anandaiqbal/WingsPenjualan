@@ -3,6 +3,7 @@ package id.iglo.wingspenjualan.view_model
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.lifecycle.HiltViewModel
 import id.iglo.api_service.usecase.ProductUseCase
 import id.iglo.common.base.BaseViewModel
@@ -25,9 +26,8 @@ class SharedViewModel @Inject constructor(
 
     var selectedProduct = MutableLiveData<List<Product>>()
     var selectedProduct2 = MutableLiveData<Product>()
-    val selectedPrices = MutableLiveData<Long>()
 
-    val inputData = MutableLiveData<String>()
+    val totalPrice = mutableMapOf<Product, Long>()
 
     fun loadProductData() {
         viewModelScope.launch {

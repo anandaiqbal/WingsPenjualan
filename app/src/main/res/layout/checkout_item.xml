@@ -51,22 +51,22 @@
                     android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/product_image"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Halooooooooooooo" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/unit_input"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     app:layout_constraintEnd_toStartOf="@id/product_unit"
                     app:layout_constraintStart_toEndOf="@id/product_image"
                     app:layout_constraintTop_toBottomOf="@id/product_title">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:text="@={vm.inputData}"
-                        android:layout_height="wrap_content" />
+                        android:id="@+id/inputData"
+                        android:inputType="number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -86,7 +86,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="@{String.format(`Sub Total : Rp.%s`, data.price)}"
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/product_image"

@@ -6,4 +6,6 @@
     <string name="selamat_datang_di">Selamat Datang di</string>
     <string name="buy">BUY</string>
     <string name="checkout">CHECKOUT</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="wings_online">WINGS ONLINE</string>
 </resources>

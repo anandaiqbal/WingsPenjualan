@@ -1,7 +1,12 @@
 package id.iglo.common.base
 
+import java.text.DecimalFormat
+import java.util.*
+
 object Constants {
-    const val API_KEY = "01a302300e7fbc9fb7f0af4e18399388"
-    const val BASE_URL = "https://api.themoviedb.org/3/"
-    const val IMG_CONFIG = "https://image.tmdb.org/t/p/original/"
+    val indonesiaCurrencyFormat = DecimalFormat.getCurrencyInstance(Locale("id", "ID"))
+    fun discountPrice(price: Long, discount: Int) : Long {
+        val price = (price - (price * discount / 100))
+        return price
+    }
 }

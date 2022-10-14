@@ -1,10 +1,13 @@
 package id.iglo.wingspenjualan.ui.product
 
+import android.graphics.Paint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import id.iglo.common.base.Constants
 import id.iglo.common.entity.Product
 import id.iglo.wingspenjualan.databinding.ProductListItemBinding
 
@@ -27,7 +30,16 @@ class ProductAdapter(
         val data = differ.currentList[position]
         holder.binding.data = data
         holder.binding.isSelected = getSelection().contains(data)
-
+        holder.binding.productPriceBeforeDiscount.text =
+            Constants.indonesiaCurrencyFormat.format(data.price)
+        holder.binding.productPriceBeforeDiscount.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+        holder.binding.productPriceAfterDiscount.text =
+            Constants.indonesiaCurrencyFormat.format(
+                Constants.discountPrice(
+                    data.price,
+                    data.discount
+                )
+            )
         holder.binding.buyButton.setOnClickListener {
             startSupportActionModeClick(data)
         }
